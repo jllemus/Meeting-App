@@ -1,0 +1,39 @@
+{% extends 'account_base.html'%}
+{% load static %}
+{% block title%}Edit account info{% endblock%}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col col-sm-12 col-lg-6">
+            <div class="card shadow">
+                <div class="card-header">
+                    <div class="card-text text-center">
+                        <h2>Update account info</h2>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <img class="card-img-top mx-auto m-3" 
+                        src="{% if user.profile.profile_photo.url %}
+                            {{user.profile.profile_photo.url}}
+                        {% else %}
+                            {% static 'src/default_user.png' %}
+                        {% endif %}" alt="Card image"
+                        style="width:20%">  
+                        {{image_form.as_p}}
+                        <hr>
+                        {{form.as_p}}
+                        <button class="btn btn-primary text-center" type="submit">Update</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <p>To change your password <a href="{% url 'account:change_password_view' %}">Click Here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

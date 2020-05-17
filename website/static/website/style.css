@@ -1,0 +1,13 @@
+
+nav .nav-item{
+    margin-right: 10px;
+}
+
+nav .nav-item:hover{
+    background-color: rgb(234, 234, 240);
+    border-radius: 5px;
+    
+}
+main{
+    margin-top: 5em;
+}

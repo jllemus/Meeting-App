@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title%}Login{% endblock%}
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center m-5">
+        <div class="col col-lg-6">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-5">Login</h5>
+                    <form role="form" action="{% url 'website:user_login' %}" method="POST">
+                        {% csrf_token %}
+                        {% for field in form.visible_fields %}
+                        <div class="form-group">
+                            <label for="">{{ field.label_tag }}</label>
+                            {{field}}
+                        </div>
+                        {% endfor %}
+                        <button class="btn btn-primary" type="submit">Sign in</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center ">
+                    <a href="#"> Forgot password? </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

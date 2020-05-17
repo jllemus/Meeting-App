@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title%}Sign up{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center m-5">
+        <div class="col col-lg-6">
+            <div class="card shadow">
+                <div class="card-header text-center text-light bg-primary">
+                    <h3 class="card-title">Sign up</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div>
+                            {% csrf_token %}
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            {{form}}
+                        {% endif %}
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary shadow m-3" type="submit">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center ">
+                    <a href="#"> Forgot password? </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

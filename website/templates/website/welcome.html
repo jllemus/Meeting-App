@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block title%}Welcome{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="justify-content-center inline">
+        <h1 class="h1 text-center">You are on welcome view</h1>
+        <p class="h5 text-center text-secondary m-5">This will be empty for a while</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="btn-group">
+            <a href="https://github.com/jllemus/DjangoApp" type="button" class="btn btn-dark"><i class="fab fa-github-alt"></i></a>
+            <button type="button" class="btn btn-dark"><i class="fab fa-google"></i></button>
+            <button type="button" class="btn btn-dark"><i class="fab fa-facebook"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+    {% for i in data %}
+        {% if i.id <= 5 %}
+            <div class="col-4 card card-default" style="border: 2px solid gainsboro;">
+                <div class="card-title">
+                    <label class="text-center" for=""><strong>Title</strong></label>
+                    <p>
+                        {{i.title}}
+                    </p>
+                </div>
+                <hr>    
+                <div class="card-body">
+                    <p class="card-text">{{i.completed}}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
