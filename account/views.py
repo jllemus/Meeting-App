@@ -54,11 +54,7 @@ class ChangePassword(TemplateView):
         return render(request, self.template_name, {'form':form})
 
     def post(self, request):
-<<<<<<< HEAD
         form = PasswordChangeForm(data=request.POST, user=request.user)
-=======
-        form = PasswordChangeForm(request.POST, user=request.user)
->>>>>>> 1656026343d2bdeaf4bb6a3d86c32cb9a9a01c98
         if form.is_valid():
             form.save()
             #This is to keep logged in sesion

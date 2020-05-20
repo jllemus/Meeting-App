@@ -15,7 +15,6 @@ class Room(models.Model):
 
 
 class Meeting(models.Model):
-<<<<<<< HEAD
     title = models.CharField(max_length=300, blank=True)
     date = models.DateField(blank=True)
     start_time = models.TimeField(default = time(9), blank=True)
@@ -23,11 +22,3 @@ class Meeting(models.Model):
     #added_by = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     added_by = models.CharField(max_length=20, default='----')
     room = models.ForeignKey(Room, on_delete=models.CASCADE, blank=True)
-=======
-    title = models.CharField(max_length=300)
-    date = models.DateField()
-    start_time = models.TimeField(default = time(9))
-    duration = models.IntegerField(default = 1)
-    added_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
->>>>>>> 1656026343d2bdeaf4bb6a3d86c32cb9a9a01c98

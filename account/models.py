@@ -15,8 +15,4 @@ class Profile(models.Model):
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-<<<<<<< HEAD
         Profile.objects.create(user=instance)
-=======
-        Profile.objects.create(user_name=instance)
->>>>>>> 1656026343d2bdeaf4bb6a3d86c32cb9a9a01c98

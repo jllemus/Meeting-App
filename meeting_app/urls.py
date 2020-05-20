@@ -17,19 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-<<<<<<< HEAD
-
-=======
->>>>>>> 1656026343d2bdeaf4bb6a3d86c32cb9a9a01c98
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('website.urls', namespace='website')),
-<<<<<<< HEAD
     path('account/api/', include('account.api.urls', namespace='account_api')),
     path('website/api/', include('website.api.urls', namespace='website_api')),
-=======
->>>>>>> 1656026343d2bdeaf4bb6a3d86c32cb9a9a01c98
     path('account/', include('account.urls', namespace='account')),
 ]
 ## JUST DEVELOPMENT PURPOSE, NOT USE IN PRODUCTION
