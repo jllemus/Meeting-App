@@ -20,10 +20,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('website.urls', namespace='website')),
-    path('account/api/', include('account.api.urls', namespace='account_api')),
-    path('website/api/', include('website.api.urls', namespace='website_api')),
-    path('account/', include('account.urls', namespace='account')),
+    path('', include('apps.website.urls', namespace='website')),
+    path('account/api/', include('apps.account.api.urls', namespace='account_api')),
+    path('website/api/', include('apps.website.api.urls', namespace='website_api')),
+    path('account/', include('apps.account.urls', namespace='account')),
 ]
 ## JUST DEVELOPMENT PURPOSE, NOT USE IN PRODUCTION
 

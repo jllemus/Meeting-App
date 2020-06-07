@@ -1,0 +1,174 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.row {
+    padding: 15px;
+}
+
+/*Main content styling*/
+
+.left-main-side .add-btn {
+    transition: box-shadow .3s;
+    border-radius: 24px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 
+    0 2px 1px -1px rgba(0,0,0,0.12), 
+    0 1px 3px 0 rgba(0,0,0,0.2);;
+    color: dimgray;
+}
+
+.left-main-side .add-btn i {
+    float: left;
+    text-align: center;
+    padding-top: 9px;
+    padding-left: 15px;
+    font-size: 25px;
+    color: rgb(23, 150, 65);
+}
+
+.left-main-side .add-btn p {
+    margin: 5px 0px;
+    padding: 6px 0;
+    padding-left: 3em;
+    padding-right: 1em;
+}
+
+.left-main-side .add-btn:hover {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 10px rgba(24, 24, 24, 0.2);
+    background-color: rgb(252, 252, 252);
+}
+
+.left-main-side .add-btn:focus {
+    outline: 0;
+}
+
+/*Meeting item styling*/
+
+.meeting-form-title{
+    width: auto;
+    font-size: 24px;
+    margin: 0 16px;
+    padding: 8px 0 0 52px;
+}
+
+.meeting-form-title hr {
+    margin-top: 0;
+    border: 1px solid #0275d8;
+}
+
+.meeting-form-title input{
+    border:none
+}
+
+.meeting-form-title input:focus{
+    outline:0;
+}
+
+.meeting-form-button{
+    padding: 8px 16px 0;
+    text-align: right;
+}
+
+.meeting-form-select{
+    display: flex;
+    width: auto;
+    height: 36px;
+    margin: 0 16px;
+    padding-left: 52px;
+    border-bottom: none;
+    font-size: 14px;
+}
+
+.meeting-form-select-item{
+    background-color: #e8f0fe;
+    border:none;
+    border-radius: .3em;
+    color:#1a73e8;
+    height: 36px;
+    padding: 0 8px;
+    margin-right: 8px;
+}
+
+.meeting-form-select-item:hover{
+    background-color: #b5d0ff;
+    border:none;
+    border-radius: .3em;
+    color:#1a73e8;
+    height: 36px;
+    padding: 0 8px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.meeting-form-select-item span{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+}
+
+.meeting-form-items-span{
+    display: table;
+    width: 100%;
+    margin-top: 14px;
+}
+
+.meeting-form-item{
+    display: flex;
+    height: 36px;
+    margin: 2px 16px 0;
+    font-size: 14px;
+
+}
+
+.meeting-form-item .form{
+    height: 100%;
+    padding:4px 0 0 16px;
+}
+
+.meeting-form-item .form input:focus{
+    outline: 0;
+}
+
+.meeting-form-item .icon{
+    width: 36px;
+    height: 36px;
+    padding-top: 6px;
+    padding-right: 8px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: rgb(97, 97, 97);
+}
+
+.meeting-form-item .form-input{
+    border:none;
+
+}
+
+.meeting-form-item .form-input #select-guest{
+    width: auto;  
+    height: 23px;  
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 8px 8px;
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14),
+    0 9px 46px 8px rgba(0,0,0,0.12),
+    0 11px 15px -7px rgba(0,0,0,0.2);
+
+}
+
+.modal-dialog{
+    border:none;
+
+}
+
+.modal-backdrop {
+    background-color: transparent !important;
+}

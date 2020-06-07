@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'website/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'website/navbar.css' %}" />
+  <!---Roboto Font google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+  <!---Fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+  <!---Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static '/js/ajax.js'%}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"
+    integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+  <!-- Tempus Dominus Bootstrap 4 -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
+    integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+    integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+  
+
+  <title>{% block title %}{% endblock %} | Mi web personal</title>
+
+</head>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <nav class="nav-bar-links">
+        <h4>Personal webpage</h4>
+        <ul>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'website:welcome_view' %} ">Welcome</a>
+          </li>
+          <li>
+            <a href="{% url 'website:meeting_view' %}">Meetings</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'website:user_login' %} "><i class="fas fa-sign-in-alt"></i>
+              Login</a>
+          </li>
+          <li>
+            <a href="{% url 'website:user_signup' %} "><i class="fas fa-user-alt"></i> Signup</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <div class="dropleft">
+        <div class="user-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <p>{{user.get_username.0}}</p>
+        </div>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'account:account_view' %}"><i class="fas fa-user-alt"></i>
+            Account</a>
+          <a class="dropdown-item" href="#"><i class="fas fa-bell"></i> Notifications</a>
+          <a class="dropdown-item" href="{% url 'website:user_logout' %} "><i class="fas fa-sign-out-alt"></i> Sign
+            out</a>
+          <a class="dropdown-item" href="{% url 'website:get_token' %}"><i class="fas fa-lock"></i> Get token </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="container-fluid">
+    {% block content %}{% endblock %}
+  </main>
+  
+</body>
+</html>
